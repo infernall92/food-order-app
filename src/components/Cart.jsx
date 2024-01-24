@@ -1,10 +1,11 @@
-import Modal from "./UI/Modal.jsx";
-import CartContext from "../store/CartContext.jsx";
-import { currencyFormatter } from "../util/formatting.js";
-import Button from "./UI/Button.jsx";
-import { useContext } from "react";
-import UserProgressContext from "../store/UserProgressContext.jsx";
-import CartItem from "./CartItem.jsx";
+import { useContext } from 'react';
+
+import Modal from './UI/Modal.jsx';
+import CartContext from '../store/CartContext.jsx';
+import Button from './UI/Button.jsx';
+import { currencyFormatter } from '../util/formatting.js';
+import UserProgressContext from '../store/UserProgressContext.jsx';
+import CartItem from './CartItem.jsx';
 
 export default function Cart() {
   const cartCtx = useContext(CartContext);
@@ -26,10 +27,10 @@ export default function Cart() {
   return (
     <Modal
       className="cart"
-      open={userProgressCtx.progress === "cart"}
-      onClose={userProgressCtx.progress === "cart" ? handleCloseCart : null}
+      open={userProgressCtx.progress === 'cart'}
+      onClose={userProgressCtx.progress === 'cart' ? handleCloseCart : null}
     >
-      <h2>Your cart</h2>
+      <h2>Your Cart</h2>
       <ul>
         {cartCtx.items.map((item) => (
           <CartItem
